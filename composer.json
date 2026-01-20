@@ -1,12 +1,11 @@
 {
-    "name": "oaranha/aivopro-composer",
+    "name": "aivopro/composer",
     "description": "AiVoPro Composer plugin - Enhanced custom installer for plugins/themes with advanced asset management",
     "keywords": [
         "composer",
         "plugin",
         "installer",
-        "aivopro",
-        "oaranha"
+        "aivopro"
     ],
     "type": "composer-plugin",
     "license": "MIT",
