@@ -1,0 +1,70 @@
+{
+    "name": "oaranha/aivopro-composer",
+    "description": "AiVoPro Composer plugin - Enhanced custom installer for plugins/themes with advanced asset management and flexible deployment options",
+    "keywords": [
+        "composer",
+        "plugin",
+        "installer",
+        "aivopro",
+        "theme",
+        "asset-management"
+    ],
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "A.Aranha",
+            "email": "aranha@ulbra.edu.br"
+        }
+    ],
+    "extra": {
+        "class": "AiVoPro\\Composer\\Plugin"
+    },
+    "require": {
+        "php": "^8.2",
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.3",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.8",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpmd/phpmd": "^2.13",
+        "phpcompatibility/php-compatibility": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "AiVoPro\\Composer\\": "src/"
+        }
+    },
+    "exclude-from-classmap": [
+        "/tests/"
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "AiVoPro\\Composer\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse",
+        "phpcs": "phpcs",
+        "phpmd": "phpmd src text phpmd.xml",
+        "test": "phpunit",
+        "check": [
+            "@phpstan",
+            "@phpcs",
+            "@phpmd",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "oaranha/aivopro-composer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
