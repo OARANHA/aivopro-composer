@@ -1,13 +1,12 @@
 {
     "name": "oaranha/aivopro-composer",
-    "description": "AiVoPro Composer plugin - Enhanced custom installer for plugins/themes with advanced asset management and flexible deployment options",
+    "description": "AiVoPro Composer plugin - Enhanced custom installer for plugins/themes with advanced asset management",
     "keywords": [
         "composer",
         "plugin",
         "installer",
         "aivopro",
-        "theme",
-        "asset-management"
+        "oaranha"
     ],
     "type": "composer-plugin",
     "license": "MIT",
@@ -35,11 +34,11 @@
     "autoload": {
         "psr-4": {
             "AiVoPro\\Composer\\": "src/"
-        }
+        },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
     },
-    "exclude-from-classmap": [
-        "/tests/"
-    ],
     "autoload-dev": {
         "psr-4": {
             "AiVoPro\\Composer\\Tests\\": "tests/"
@@ -48,23 +47,18 @@
     "scripts": {
         "phpstan": "phpstan analyse",
         "phpcs": "phpcs",
-        "phpmd": "phpmd src text phpmd.xml",
-        "test": "phpunit",
-        "check": [
+        "phpcbf": "phpcbf -v",
+        "phpmd": "phpmd src ansi phpmd.xml --suffixes=php",
+        "unit-test": "phpunit",
+        "code-coverage": "phpunit --coverage-html coverage",
+        "analyse": [
             "@phpstan",
             "@phpcs",
             "@phpmd",
-            "@test"
+            "@unit-test"
+        ],
+        "fix": [
+            "@phpcbf"
         ]
-    },
-    "config": {
-        "sort-packages": true,
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "allow-plugins": {
-            "oaranha/aivopro-composer": true
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }
