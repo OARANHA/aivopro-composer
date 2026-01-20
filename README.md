@@ -234,10 +234,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Email: aranha@ulbra.edu.br
 - GitHub: [@OARANHA](https://github.com/OARANHA)
 
-## 🙏 Acknowledgments
-
-Inspired by [heyaikeedo/composer](https://github.com/heyaikeedo/composer)
-
 ---
 
-Made with ❤️ by [OARANHA](https://github.com/OARANHA)
+Made with ❤️ for the AiVoPro ecosystem
